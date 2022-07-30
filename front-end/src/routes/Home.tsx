@@ -42,6 +42,7 @@ const WeatherContainter = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top : 40px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12);
 
 `
