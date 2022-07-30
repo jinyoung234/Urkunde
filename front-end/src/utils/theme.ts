@@ -1,14 +1,15 @@
 import { DefaultTheme } from 'styled-components';
 
-export const theme: DefaultTheme = {
-    red: "#E51013",
-    black: {
-      veryDark: "#141414",
-      darker: "#181818",
-      lighter: "#2F2F2F",
-    },
-    white: {
-      lighter: "#fff",
-      darker: "#e5e5e5",
-    },
-  };
+export const darkTheme: DefaultTheme = {
+  bgColor: 'linear-gradient(135deg, #141ff2, #64b8f5)',
+  textColor: 'rgba(255,255,255,0.9)',
+  accentColor: '#546de5',
+  contentColor: 'rgba(0, 0, 0, 0.5)',
+}
+
+export const whiteTheme: DefaultTheme = {
+  bgColor: 'white',
+  textColor: 'black',
+  accentColor: '#546de5',
+  contentColor: 'white',
+}

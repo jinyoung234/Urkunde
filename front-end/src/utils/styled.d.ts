@@ -2,16 +2,11 @@
 import 'styled-components';
 
 declare module 'styled-components' {
-    export interface DefaultTheme {
-        red: string;
-        black: {
-          veryDark: string;
-          darker: string;
-          lighter: string;
-        };
-        white: {
-          darker: string;
-          lighter: string;
-        };
-      }
+  export interface DefaultTheme {
+    // interface에서 필요한 props 속성을 정의
+    bgColor:string,
+    textColor:string,
+    accentColor:string,
+    contentColor:string,
+  }
 }

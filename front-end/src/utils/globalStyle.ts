@@ -53,9 +53,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     }
     body {
-    font-weight: 300;
-    font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.2;
+        font-weight: 300;
+        font-family: 'Source Sans Pro', sans-serif;
+        line-height: 1.2;
+        background: ${props => props.theme.bgColor};
     }
     a {
     text-decoration:none;
