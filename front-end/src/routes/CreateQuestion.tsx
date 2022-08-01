@@ -25,6 +25,10 @@ function CreateQuestion() {
     console.log(set);
     // 문제 생성 버튼
     const handleCreateQuestion = (question:string, answer:string) => {
+        if(question === '' || answer === '') {
+            alert("문제나 답을 다시 입력해주세요 :)");
+            return
+        }
         setSet((oldSet) => {
             const newSet = {id:Date.now(), question: question, answer: answer};
             return [newSet, ...oldSet];
