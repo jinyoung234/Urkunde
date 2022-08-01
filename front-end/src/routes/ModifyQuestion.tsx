@@ -15,7 +15,7 @@ function ModifyQuestion() {
             const index = oldQuestion.findIndex(question => question.id === id);
             return [...oldQuestion.slice(0, index), ...oldQuestion.slice(index+1)];
         })
-        setAllQuestion((prev) => prev-1);
+        setAllQuestion((prev:number) => prev-1);
     }
 
     return (

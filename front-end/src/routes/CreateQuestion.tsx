@@ -30,7 +30,7 @@ function CreateQuestion() {
             return [newSet, ...oldSet];
         })
         // 문제 갯수 counting
-        setQuestionCount((prevNum) => prevNum+1);
+        setQuestionCount((prevNum:number) => prevNum+1);
         // 생각해봐야 할 점
         // 1. 버튼을 누르면 textArea와 input의 있는 text들이 초기화 되어야 함.
     }
