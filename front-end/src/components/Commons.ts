@@ -159,3 +159,58 @@ export const Answer = styled.textarea`
     padding: 25px 0px;
     margin-bottom: 20px;
 `;
+
+// self-Check Component
+export const ForSelfCheckComponent = styled(CommonComponent)`
+    background-color: rgba(255,255,255,0);
+    width: 70%;
+    display : flex;
+    flex-direction: row;
+    padding: 0px;
+    box-shadow: 0 0px 0px;
+`
+
+export const ForSelfCheckSubComponent = styled(CommonSubComponent)`
+    width: 90%;
+    height: 100%;
+    border-radius: 50px;
+    justify-content: flex-start;
+`;
+
+export const Correct = styled.span`
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: green;
+`;
+
+export const Incorrect = styled.span`
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: red;
+`;
+
+export const SliderLeftButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0);
+    width: 8%;
+    height: 16%;
+    position : absolute;
+    top : 47%;
+    left: 7%;
+    border: 0px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12);
+    img {
+        width: 100%;
+        margin-right: 5px;
+    }
+`;
+
+export const SliderRightButton = styled(SliderLeftButton)`
+    left: 85.5%;
+    img {
+        margin-left: 8px;
+    }
+`;

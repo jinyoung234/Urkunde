@@ -6,8 +6,6 @@ const {persistAtom} = recoilPersist({
     storage : localStorage,
 })
 
-
-
 export interface ISetInfo {
     id : number,
     question : string,
@@ -37,5 +35,18 @@ export const questionNum = atom({
 export const questionSet = atom<ISetInfo[]>({
     key: "qustionSet",
     default : [],
+    effects_UNSTABLE: [persistAtom],
+})
+
+// 정답과 오답 상태 관리
+export const correctNum = atom({
+    key: 'correctNum',
+    default : 0,
+    effects_UNSTABLE: [persistAtom],
+})
+
+export const incorrectNum = atom({
+    key: 'incorrectNum',
+    default : 0,
     effects_UNSTABLE: [persistAtom],
 })
