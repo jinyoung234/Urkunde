@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import {motion} from "framer-motion"
 export const Container = styled.div`
     padding: 80px 80px;
     display: flex;
@@ -24,7 +24,7 @@ export const CommonComponent = styled.div`
 
 `
 
-export const CommonSubComponent = styled.div`
+export const CommonSubComponent = styled(motion.div)`
     background-color: white;
     padding: 80px 0px;
     display: flex;
@@ -175,6 +175,8 @@ export const ForSelfCheckSubComponent = styled(CommonSubComponent)`
     height: 100%;
     border-radius: 50px;
     justify-content: flex-start;
+    position: absolute;
+    padding : 37px 0px;
 `;
 
 export const Correct = styled.span`
@@ -197,8 +199,8 @@ export const SliderLeftButton = styled.button`
     width: 8%;
     height: 16%;
     position : absolute;
-    top : 47%;
-    left: 7%;
+    top : 44%;
+    left: 2.2%;
     border: 0px;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -209,7 +211,7 @@ export const SliderLeftButton = styled.button`
 `;
 
 export const SliderRightButton = styled(SliderLeftButton)`
-    left: 85.5%;
+    left: 90%;
     img {
         margin-left: 8px;
     }
