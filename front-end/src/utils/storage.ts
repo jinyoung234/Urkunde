@@ -19,8 +19,8 @@ export const modalState = atom({
 })
 
 // 모드 변경 상태 관리
-export const lightMode = atom ({
-    key: "lightMode",
+export const colorMode = atom ({
+    key: "colorMode",
     default : true,
 })
 
