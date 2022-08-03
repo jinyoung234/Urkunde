@@ -5,6 +5,7 @@ import CreateQuestion from "../routes/CreateQuestion";
 import Home from "../routes/Home";
 import ModifyQuestion from "../routes/ModifyQuestion";
 import SelfCheck from "../routes/SelfCheck";
+import SelfCheckResult from "../routes/SelfCheckResult";
 
 function Router() {
     return (
@@ -17,6 +18,7 @@ function Router() {
                     </Route>
                     <Route path={"/self-check"} element={<SelfCheck/>}></Route>
                     <Route path={"/modify"} element={<ModifyQuestion/>}></Route>
+                    <Route path={"/result"} element={<SelfCheckResult/>}></Route>
                 </Routes>
             </BrowserRouter>
     )
