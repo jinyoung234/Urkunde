@@ -7,7 +7,7 @@ function ModifyQuestion() {
     const [getQuestions, setQuestions] = useRecoilState(questionSet);
 
     // 문제 삭제 시 삭제한 문제 수를 업데이트 하기 위한 변수
-    const setAllQuestion = useSetRecoilState(questionNum);
+    const [allQuestion, setAllQuestion] = useRecoilState(questionNum);
 
     // 삭제하기 버튼을 누르면 해당 문제를 삭제 -> 문제 수 1 감소
     const handleDeleteQuestion = (id:number) => {
@@ -19,7 +19,7 @@ function ModifyQuestion() {
     }
 
     return (
-        <Container>
+        <Container style={{height : 'auto'}}>
             <Title>
                 MODIFY QUESTION
             </Title>
@@ -27,7 +27,7 @@ function ModifyQuestion() {
             {getQuestions.map(question =>
             <CommonSubComponent 
                 key={question.id}
-                style={{padding:'30px 0px',height: '50%', marginBottom:'20px'}}
+                style={{padding:'60px 0px', height: '50%', marginBottom:'20px'}}
             >
                 <HeadTitle>문제</HeadTitle>
                 <ModifyPageTitle>{question.question}</ModifyPageTitle>
@@ -39,6 +39,11 @@ function ModifyQuestion() {
                     삭제하기
                 </DangerButton>
             </CommonSubComponent>)}
+            { allQuestion === 0 ? 
+                <CommonSubComponent style={{height:'60vh'}}>
+                    <Title style={{fontSize: '30px', fontWeight:'300', color:'black'}}>문제가 비어있습니다.</Title>
+                    <Title style={{fontSize: '30px', fontWeight:'300', color:'black'}}>문제들을 채워주세요 :) </Title>
+                </CommonSubComponent> : '' }
         </Container>
     )   
 }
