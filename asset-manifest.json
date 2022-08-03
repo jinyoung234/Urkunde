@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Urkunde/static/js/main.77e67b3b.js",
+    "main.js": "/Urkunde/static/js/main.8a267f5e.js",
     "index.html": "/Urkunde/index.html",
-    "main.77e67b3b.js.map": "/Urkunde/static/js/main.77e67b3b.js.map"
+    "main.8a267f5e.js.map": "/Urkunde/static/js/main.8a267f5e.js.map"
   },
   "entrypoints": [
-    "static/js/main.77e67b3b.js"
+    "static/js/main.8a267f5e.js"
   ]
 }
