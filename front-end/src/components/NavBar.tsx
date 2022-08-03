@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { modalState, colorMode } from "../utils/storage";
@@ -55,7 +56,9 @@ function NavBar() {
     return (
         <Nav>
             <Col>
-                <Logo style={{color: onColorMode ? "white" : "black"}}>Urkunde</Logo>
+                <Logo style={{color: onColorMode ? "white" : "black"}}>
+                    <Link to="/">Urkunde</Link>
+                </Logo>
             </Col>
             <Col>
                 <ChangeMode>

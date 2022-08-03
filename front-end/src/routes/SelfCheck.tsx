@@ -1,9 +1,9 @@
 import { useSetRecoilState, useRecoilValue } from "recoil"
 import { questionSet, correctNum, incorrectNum, questionNum } from "../utils/storage"
-import { ForSelfCheckSubComponent, Container, Title, SubTitle, HeadTitle, ModifyPageTitle, ForSelfCheckComponent, PrimaryButton, Answer, Correct, Incorrect, SliderLeftButton, SliderRightButton } from "../components/Commons";
+import { ForSelfCheckSubComponent, Container, Title, SubTitle, HeadTitle, ModifyPageTitle, ForSelfCheckComponent, PrimaryButton, Answer, Correct, Incorrect, SliderLeftButton, SliderRightButton, BackCircle } from "../components/Commons";
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // slider Animation
 export const questionVariants = {
@@ -100,9 +100,21 @@ function SelfCheck() {
 
     // 왼쪽 슬라이더 state
     const [sliderMotionChange, setsliderMotionChange] = useState(false);
+
+    // 뒤로가기 버튼
+    const moveBack = useNavigate();
+    const handleBackCircleClick = () => {
+        moveBack('/create');
+    }
     
     return (
        <Container style={{height: selfCheckNum + 1 === quesionNumber ? '111vh' : '104vh'}}>
+            <BackCircle
+                style={{left:'25%'}}
+                onClick = {handleBackCircleClick}
+            >
+                <img style={{marginRight:'2px', width: '50%'}} src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZGVmcz4KICA8Y2xpcFBhdGggaWQ9ImEiPgogICA8cGF0aCBkPSJtMjQzIDEzOS4yMWgyNjZ2NDczLjU4aC0yNjZ6Ii8+CiAgPC9jbGlwUGF0aD4KIDwvZGVmcz4KIDxnIGNsaXAtcGF0aD0idXJsKCNhKSI+CiAgPHBhdGggZD0ibTI1MS41OCAzNTQuNzMgMjA3LjAyLTIwNy4wMmMxMi4wNTEtMTEuMzQ0IDMwLjQ4NC0xMS4zNDQgNDEuODI4IDBzMTEuMzQ0IDI5Ljc3NyAwIDQxLjgyOGwtMTg2LjQ1IDE4Ni40NSAxODYuNDUgMTg2LjQ1YzExLjM0NCAxMS4zNDQgMTEuMzQ0IDMwLjQ4NCAwIDQxLjgyOHMtMjkuNzc3IDExLjM0NC00MS44MjggMGwtMjA3LjAyLTIwNy43MmMtMTEuMzQ0LTExLjM0NC0xMS4zNDQtMjkuNzc3IDAtNDEuODI4eiIgZmlsbC1ydWxlPSJldmVub2RkIi8+CiA8L2c+Cjwvc3ZnPgo=" />
+            </BackCircle>
             <Title>
                 SELF-CHECK
             </Title>

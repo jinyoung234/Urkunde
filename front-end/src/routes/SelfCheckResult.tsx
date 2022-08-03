@@ -6,7 +6,6 @@ import { correctNum, questionNum } from "../utils/storage";
 function SelfCheckResult() {
     const correctQuestion = useRecoilValue(correctNum);
     const allQuestion = useRecoilValue(questionNum);
-
     return (
         <Container style={{height: '100vh'}}>
             <Title> RESULT PAGE </Title>

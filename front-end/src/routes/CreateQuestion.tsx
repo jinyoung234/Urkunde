@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { Container, CommonComponent, Title, SubTitle, HeadTitle, PrimaryLargeButton, CheckSubComponent, Answer } from "../components/Commons";
+import { Container, CommonComponent, Title, SubTitle, HeadTitle, PrimaryLargeButton, CheckSubComponent, Answer, BackCircle } from "../components/Commons";
 import { CommonInput } from "../components/Input";
 import { correctNum, incorrectNum, questionNum, questionSet } from "../utils/storage";
 
@@ -63,9 +63,19 @@ function CreateQuestion() {
         modifyQuestionPage("/modify");
     }
 
+    // 뒤로가기 버튼
+    const moveBack = useNavigate();
+    const handleBackCircleClick = () => {
+        moveBack('/check');
+    }
 
     return (
         <Container style={{height: '150vh'}}>
+            <BackCircle
+                onClick = {handleBackCircleClick}
+            >
+                <img style={{marginRight:'2px', width: '50%'}} src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZGVmcz4KICA8Y2xpcFBhdGggaWQ9ImEiPgogICA8cGF0aCBkPSJtMjQzIDEzOS4yMWgyNjZ2NDczLjU4aC0yNjZ6Ii8+CiAgPC9jbGlwUGF0aD4KIDwvZGVmcz4KIDxnIGNsaXAtcGF0aD0idXJsKCNhKSI+CiAgPHBhdGggZD0ibTI1MS41OCAzNTQuNzMgMjA3LjAyLTIwNy4wMmMxMi4wNTEtMTEuMzQ0IDMwLjQ4NC0xMS4zNDQgNDEuODI4IDBzMTEuMzQ0IDI5Ljc3NyAwIDQxLjgyOGwtMTg2LjQ1IDE4Ni40NSAxODYuNDUgMTg2LjQ1YzExLjM0NCAxMS4zNDQgMTEuMzQ0IDMwLjQ4NCAwIDQxLjgyOHMtMjkuNzc3IDExLjM0NC00MS44MjggMGwtMjA3LjAyLTIwNy43MmMtMTEuMzQ0LTExLjM0NC0xMS4zNDQtMjkuNzc3IDAtNDEuODI4eiIgZmlsbC1ydWxlPSJldmVub2RkIi8+CiA8L2c+Cjwvc3ZnPgo=" />
+            </BackCircle>
             <Title>CREATE QUESTION</Title>
             <SubTitle>체크하고 싶은 문제를 만들어 보세요 :) </SubTitle>
             <SubTitle>문제들을 다 풀었다면 문제 리셋을 한 후 "점검 하러 가기"로 이동해주세요 :) </SubTitle>

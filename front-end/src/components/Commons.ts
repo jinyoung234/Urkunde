@@ -118,6 +118,30 @@ export const DangerButton = styled(PrimaryButton)`
     background-color: #C82333;
 `;
 
+// Circle
+
+export const Circle = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color : white;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-color: rgba(0,0,0,0.1);
+`;
+
+export const BackCircle = styled(Circle)`
+    position: absolute;
+    background-color: white;
+    top : 110px;
+    left: 20%;
+    width: 4%;
+    height: 8vh;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
+`;
+
 // Home Component
 export const WeatherContent = styled.div`
     display: flex;
@@ -134,18 +158,6 @@ export const CircleComponent = styled.div`
     grid-template-columns: repeat(7, 1fr);
     justify-items: center;
     align-items: center;
-`;
-
-export const Circle = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 75%;
-    border-radius: 50%;
-    background-color : white;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08);
-    background-color: rgba(0,0,0,0.1);
 `;
 
 // CreateQuestion Component
