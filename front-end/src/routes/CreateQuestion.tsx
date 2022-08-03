@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { Container, CommonComponent, Title, SubTitle, HeadTitle, PrimaryLargeButton, CheckSubComponent, Answer } from "../components/Commons";
 import { CommonInput } from "../components/Input";
-import { questionNum, questionSet } from "../utils/storage";
+import { correctNum, incorrectNum, questionNum, questionSet } from "../utils/storage";
 
 function CreateQuestion() {
     // Question 갯수는 check 페이지에서도 써야하기 때문에 useRecoilState로 관리
@@ -18,7 +18,6 @@ function CreateQuestion() {
     const addAnswer = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
         setAnswer(e.currentTarget.value);
     }
-    console.log(question, answer);
 
     // 문제-답(1세트) state
     const [set, setSet] = useRecoilState(questionSet);
@@ -39,6 +38,19 @@ function CreateQuestion() {
         // 1. 버튼을 누르면 textArea와 input의 있는 text들이 초기화 되어야 함.
     }
 
+    const correctQuestionsNum = useSetRecoilState(correctNum);
+    const incorrectQuestionsNum = useSetRecoilState(incorrectNum);
+
+    // 리셋 버튼을 누를 시, 문제 갯수, 정답, 오답 갯수 모두 초기화
+    const handleResetButton = () => {
+        correctQuestionsNum(0);
+        incorrectQuestionsNum(0);
+        setQuestionCount(0);
+        setSet((prevQuestions) => {
+            return prevQuestions = [];
+        })
+    }
+
     // 자가 점검 페이지로 이동
     const selfCheckPage = useNavigate();
     const goToSelfCheck = () => {
@@ -53,10 +65,10 @@ function CreateQuestion() {
 
 
     return (
-        <Container style={{height: '130vh'}}>
+        <Container style={{height: '140vh'}}>
             <Title>CREATE QUESTION</Title>
             <SubTitle>체크하고 싶은 문제를 만들어 보세요 :) </SubTitle>
-            <CommonComponent style={{padding:'0px' ,height: '80vh'}}>
+            <CommonComponent style={{padding:'0px' ,width:'75%',height: '100vh'}}>
                 <HeadTitle>Create Question</HeadTitle>
                 <CheckSubComponent
                 >
@@ -75,9 +87,14 @@ function CreateQuestion() {
                         문제 생성
                     </PrimaryLargeButton>
                     <PrimaryLargeButton
-                        onClick={goModifyQuestion}>문제 수정</PrimaryLargeButton>
+                        onClick={goModifyQuestion}>문제 수정
+                    </PrimaryLargeButton>
                     <PrimaryLargeButton
-                        onClick={goToSelfCheck}>점검 하러 하기</PrimaryLargeButton>
+                        onClick={handleResetButton}>문제 리셋
+                    </PrimaryLargeButton>
+                    <PrimaryLargeButton
+                        onClick={goToSelfCheck}>점검 하러 하기
+                    </PrimaryLargeButton>
                 </CheckSubComponent>
             </CommonComponent>
         </Container>
