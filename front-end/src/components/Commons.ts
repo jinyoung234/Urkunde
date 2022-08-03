@@ -158,6 +158,7 @@ export const Answer = styled.textarea`
     text-align: center;
     padding: 25px 0px;
     margin-bottom: 20px;
+    resize : none;
 `;
 
 // self-Check Component
