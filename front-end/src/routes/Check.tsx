@@ -1,7 +1,11 @@
-import { HeadTitle, CommonComponent, Container, PrimaryButton, SubTitle, Title, CircleComponent, Circle } from "../components/Commons";
+import { 
+    HeadTitle, CommonComponent, Container, PrimaryButton, SubTitle, Title, CircleComponent, Circle 
+} from "../components/Commons";
 import ApexChart from "react-apexcharts";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { correctNum, incorrectNum } from "../utils/storage";
+import { useRecoilValue } from "recoil";
 
 interface IWeekInfo {
     id : number
@@ -21,6 +25,10 @@ function Check() {
         {id: 5, date: '토', state: false}, 
         {id: 6, date: '일', state: false}
     ]);
+
+    // 그래프에 표시되는 맞는 갯수, 틀린 갯수 표시
+    const correctQuestion = useRecoilValue(correctNum);
+    const incorrectQuestion = useRecoilValue(incorrectNum);
 
     // Weekly Check에서 원을 클릭 시 체크 된 원으로 변경
     const handleOnCircleClick = (id : number) => {     
@@ -50,12 +58,13 @@ function Check() {
             <CommonComponent style={{paddingTop: '20px'}}>
                 <HeadTitle>Today Result</HeadTitle>
                 <ApexChart
+                    style={{marginLeft: '50px', marginTop : '40px'}}
                     type="donut"
                     width="100%"
-                    heihgt="100px"
-                    series={[0,0]}
+                    series={[correctQuestion,incorrectQuestion]}
                     options={{
-                        series: [0,0],
+                        colors : ['#3D6FF3', '#F20000'],
+                        series: [incorrectQuestion,incorrectQuestion],
                         labels: ['O', 'X'],
                         plotOptions:{
                             pie:{
@@ -85,9 +94,12 @@ function Check() {
                     <CircleComponent>
                         {week.map(day => 
                           day.state === true ? 
-                            (<Circle 
+                            (<Circle
+                                style={{color:'white', backgroundColor:'#3AA84C'}} 
                                 onClick={() => handleOnCircleClick(day.id)}
-                                key={day.id}>v</Circle>) : 
+                                key={day.id}>
+                                    <svg id="SvgjsSvg1012" width="30" height="30" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1013"></defs><g id="SvgjsG1014"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30" height="30"><rect width="256" height="256" fill="none"></rect><polyline fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" points="216 72.005 104 184 48 128.005"></polyline></svg></g></svg>
+                                    </Circle>) : 
                             ( 
                                 <Circle
                                     onClick={() => handleOnCircleClick(day.id)} 

@@ -13,7 +13,7 @@ export const CommonComponent = styled.div`
     background-color: white;
     border: 0px;
     border-radius: 40px;
-    width: 60%;
+    width: 70%;
     height: 90%;
     display : flex;
     flex-direction: column;
@@ -128,8 +128,8 @@ export const WeatherContent = styled.div`
 // Check Component
 export const CircleComponent = styled.div`
     background-color : white;
-    width : 90%;
-    height: 50%;
+    width : 86%;
+    height: 55%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     justify-items: center;
