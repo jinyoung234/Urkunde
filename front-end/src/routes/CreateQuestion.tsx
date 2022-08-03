@@ -65,9 +65,10 @@ function CreateQuestion() {
 
 
     return (
-        <Container style={{height: '140vh'}}>
+        <Container style={{height: '150vh'}}>
             <Title>CREATE QUESTION</Title>
             <SubTitle>체크하고 싶은 문제를 만들어 보세요 :) </SubTitle>
+            <SubTitle>문제들을 다 풀었다면 문제 리셋을 한 후 "점검 하러 가기"로 이동해주세요 :) </SubTitle>
             <CommonComponent style={{padding:'0px' ,width:'75%',height: '100vh'}}>
                 <HeadTitle>Create Question</HeadTitle>
                 <CheckSubComponent
