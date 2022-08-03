@@ -20,7 +20,7 @@ function CreateQuestion() {
     }
 
     // 문제-답(1세트) state
-    const [set, setSet] = useRecoilState(questionSet);
+    const setSet = useSetRecoilState(questionSet);
     // 문제 생성 버튼
     const handleCreateQuestion = (question:string, answer:string) => {
         if(question === '' || answer === '') {

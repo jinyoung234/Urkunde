@@ -3,7 +3,7 @@ import {
 } from "../components/Commons";
 import ApexChart from "react-apexcharts";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { correctNum, incorrectNum } from "../utils/storage";
 import { useRecoilValue } from "recoil";
 

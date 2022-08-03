@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { CommonSubComponent, Container, Title, SubTitle, HeadTitle, DangerButton, ModifyPageTitle, BackCircle } from "../components/Commons";
 import { questionNum, questionSet } from "../utils/storage";
 
