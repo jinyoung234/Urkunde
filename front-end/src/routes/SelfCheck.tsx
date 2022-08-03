@@ -118,7 +118,15 @@ function SelfCheck() {
             <Title>
                 SELF-CHECK
             </Title>
-            <SubTitle>{selfCheckNum + 1} / {quesionNumber} </SubTitle>
+            <SubTitle>{quesionNumber === 0 ? selfCheckNum : selfCheckNum + 1} / {quesionNumber} </SubTitle>
+            {
+                quesionNumber === 0 ?
+                <ForSelfCheckComponent>
+                    <ForSelfCheckSubComponent style={{fontSize : '50px', display:'flex', justifyContent: 'center', marginTop : '200px', width: '60%', height: '60vh'}}>
+                        <div>문제를 만들어주세요 :)</div>
+                    </ForSelfCheckSubComponent>
+                </ForSelfCheckComponent> : ''
+            }
             {selfCheckNum + 1 === quesionNumber && <SubTitle style={{fontWeight:'500'}}><Link to="/result">결과 확인하러 가기</Link></SubTitle>}
                 <ForSelfCheckComponent 
                         style={{display: 'flex', flexDirection:'row', position:'relative', padding: '0px 0px'}}
