@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useEffect } from "react";
 
 const appId = "33ecce6d5932603d3d9fd8b1e51d2f1d";
 

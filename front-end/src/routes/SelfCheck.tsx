@@ -1,9 +1,10 @@
 import { useSetRecoilState, useRecoilValue } from "recoil"
-import { questionSet, correctNum, incorrectNum, questionNum } from "../utils/storage"
+import { questionSet, correctNum, incorrectNum, questionNum, weeklyCheck } from "../utils/storage"
 import { ForSelfCheckSubComponent, Container, Title, SubTitle, HeadTitle, ModifyPageTitle, ForSelfCheckComponent, PrimaryButton, Answer, Correct, Incorrect, SliderLeftButton, SliderRightButton, BackCircle } from "../components/Commons";
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import moment from "moment";
 
 // slider Animation
 export const questionVariants = {
@@ -40,6 +41,12 @@ export const questionVariants = {
 }
 
 function SelfCheck() {
+    // 요일 가져오기 위해 weeklyCheck 가져옴
+    const week = useRecoilValue(weeklyCheck);
+
+    // 실제 날짜에 대해 ~요일로 변경하기 위한 변수
+    const dayOfWeek = new Date(moment().format('YYYY-MM-DD')).getDay();
+    
     // 전체 문제 갯수 state
     const quesionNumber = useRecoilValue(questionNum);
     
@@ -116,7 +123,7 @@ function SelfCheck() {
                 <img style={{marginRight:'2px', width: '50%'}} src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZGVmcz4KICA8Y2xpcFBhdGggaWQ9ImEiPgogICA8cGF0aCBkPSJtMjQzIDEzOS4yMWgyNjZ2NDczLjU4aC0yNjZ6Ii8+CiAgPC9jbGlwUGF0aD4KIDwvZGVmcz4KIDxnIGNsaXAtcGF0aD0idXJsKCNhKSI+CiAgPHBhdGggZD0ibTI1MS41OCAzNTQuNzMgMjA3LjAyLTIwNy4wMmMxMi4wNTEtMTEuMzQ0IDMwLjQ4NC0xMS4zNDQgNDEuODI4IDBzMTEuMzQ0IDI5Ljc3NyAwIDQxLjgyOGwtMTg2LjQ1IDE4Ni40NSAxODYuNDUgMTg2LjQ1YzExLjM0NCAxMS4zNDQgMTEuMzQ0IDMwLjQ4NCAwIDQxLjgyOHMtMjkuNzc3IDExLjM0NC00MS44MjggMGwtMjA3LjAyLTIwNy43MmMtMTEuMzQ0LTExLjM0NC0xMS4zNDQtMjkuNzc3IDAtNDEuODI4eiIgZmlsbC1ydWxlPSJldmVub2RkIi8+CiA8L2c+Cjwvc3ZnPgo=" />
             </BackCircle>
             <Title>
-                SELF-CHECK
+                {week[dayOfWeek].date}요일 SELF-CHECK
             </Title>
             <SubTitle>{quesionNumber === 0 ? selfCheckNum : selfCheckNum + 1} / {quesionNumber} </SubTitle>
             {
