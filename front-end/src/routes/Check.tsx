@@ -2,10 +2,12 @@ import {
     HeadTitle, CommonComponent, Container, PrimaryButton, SubTitle, Title, CircleComponent, Circle, BackCircle 
 } from "../components/Commons";
 import ApexChart from "react-apexcharts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { correctNum, incorrectNum } from "../utils/storage";
-import { useRecoilValue } from "recoil";
+import { correctNum, incorrectNum, weeklyCheck } from "../utils/storage";
+import { useRecoilState, useRecoilValue } from "recoil";
+import moment from "moment";
+import { useInterval } from 'react-use';
 
 interface IWeekInfo {
     id : number
@@ -14,17 +16,32 @@ interface IWeekInfo {
 }
 
 function Check() {
-
+    const[seconds, setSeconds] = useState(moment().format('HH:mm:ss'));
+    const dayOfWeek = new Date(moment().format('YYYY-MM-DD')).getDay();
+    
     // week state
-    const [week, setWeek] = useState<IWeekInfo[]>([
-        {id: 0, date: '월', state: false},
-        {id: 1, date: '화', state: false}, 
-        {id: 2, date: '수', state: false}, 
-        {id: 3, date: '목', state: false}, 
-        {id: 4, date: '금', state: false}, 
-        {id: 5, date: '토', state: false}, 
-        {id: 6, date: '일', state: false}
-    ]);
+    const [week, setWeek] = useRecoilState<IWeekInfo[]>(weeklyCheck);
+
+    useInterval(()=>{
+        setSeconds(moment().format('HH:mm:ss'));
+    }, 1000);
+
+    useEffect(() => {
+        (seconds === '00:00:00' && dayOfWeek === 1) && setWeek(
+            (week) => {
+                let arr = [
+                    {id: 0, date: '일', state: false},
+                    {id: 1, date: '월', state: false},
+                    {id: 2, date: '화', state: false}, 
+                    {id: 3, date: '수', state: false}, 
+                    {id: 4, date: '목', state: false}, 
+                    {id: 5, date: '금', state: false}, 
+                    {id: 6, date: '토', state: false}, 
+                ]
+                return arr;
+            }
+        );
+    },[seconds]);
 
     // 그래프에 표시되는 맞는 갯수, 틀린 갯수 표시
     const correctQuestion = useRecoilValue(correctNum);
@@ -126,3 +143,4 @@ function Check() {
 }
 
 export default Check
+

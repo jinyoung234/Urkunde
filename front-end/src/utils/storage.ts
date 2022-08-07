@@ -50,3 +50,18 @@ export const incorrectNum = atom({
     default : 0,
     effects_UNSTABLE: [persistAtom],
 })
+
+// Weekly Check 일주일 마다 초기화
+export const weeklyCheck = atom({
+    key: 'weeklyCheck',
+    default : [
+        {id: 0, date: '일', state: false},
+        {id: 1, date: '월', state: false},
+        {id: 2, date: '화', state: false}, 
+        {id: 3, date: '수', state: false}, 
+        {id: 4, date: '목', state: false}, 
+        {id: 5, date: '금', state: false}, 
+        {id: 6, date: '토', state: false}, 
+    ],
+    effects_UNSTABLE: [persistAtom],
+})
