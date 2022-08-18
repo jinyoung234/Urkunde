@@ -14,14 +14,14 @@ export const CommonInput = styled.input`
     margin-top : 10px;
 `
 
-export default function Input () {
-    const setQuestion = useSetRecoilState(questionState);
-    const addQuestion = (e:React.ChangeEvent<HTMLInputElement>) => {
-        setQuestion(e.currentTarget.value);
-    }
+interface InputProps {
+    changeFn : (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function Input ({changeFn} : InputProps) {
     return (
             <CommonInput
-                onChange={addQuestion}
+                onChange={changeFn}
                 placeholder="문제를 생성해 보세요 :)"
             />
     )
