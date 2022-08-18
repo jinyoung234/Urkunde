@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { Container, CommonComponent, Title, SubTitle, HeadTitle, PrimaryLargeButton, CheckSubComponent, Answer, BackCircle } from "../components/Commons";
-import { CommonInput } from "../components/Input";
+import { Container, CommonComponent, Title, SubTitle, HeadTitle, PrimaryLargeButton, CheckSubComponent, Answer, BackCircle } from "../components/commons/Commons";
+import { CommonInput } from "../components/commons/Input";
 import { correctNum, incorrectNum, questionNum, questionSet } from "../utils/storage";
 
 function CreateQuestion() {
@@ -35,6 +35,9 @@ function CreateQuestion() {
         setQuestionCount((prevNum:number) => prevNum+1);
         // 생각해봐야 할 점
         // 1. 버튼을 누르면 textArea와 input의 있는 text들이 초기화 되어야 함.
+        setQuestion('');
+        setAnswer('');
+        window.location.reload();
     }
 
     const correctQuestionsNum = useSetRecoilState(correctNum);
