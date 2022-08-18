@@ -9,6 +9,7 @@ import CreateButton from "src/components/create/atoms/CreateButton";
 import MovePageButton from "src/components/create/atoms/MovePageButton";
 import ResetButton from "src/components/create/atoms/ResetButton";
 import useReset from "src/hooks/useReset";
+import useQuestionSet from "src/hooks/useSetQuestion";
 
 export default function CreateQuestionComponent() {
 
@@ -17,6 +18,8 @@ export default function CreateQuestionComponent() {
     const {handleCreateQuestion, question, answer} = useCreate();
 
     const {handleResetButton} = useReset();
+
+    const {addQuestion, addAnswer} = useQuestionSet();
 
     return (
         <Container style={{height: '150vh'}}>
@@ -27,8 +30,12 @@ export default function CreateQuestionComponent() {
             <CommonComponent style={{padding:'0px' ,width:'75%',height: '100vh'}}>
                 <HeadTitle>Create Question</HeadTitle>
                 <CheckSubComponent>
-                    <Input/>
-                    <TextArea/>
+                    <Input 
+                        changeFn={addQuestion}
+                    />
+                    <TextArea 
+                        changeFn={addAnswer}
+                    />
                     <QuestionNumber questionNumber={questionNumber}/>
                     <CreateButton
                         createQuesitonFn = {handleCreateQuestion}
