@@ -1,5 +1,3 @@
-import { useSetRecoilState } from "recoil";
-import { answerState } from "src/utils/storage";
 import styled from "styled-components";
 
 

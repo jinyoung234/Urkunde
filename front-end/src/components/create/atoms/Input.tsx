@@ -1,5 +1,3 @@
-import { useSetRecoilState } from "recoil";
-import { questionState } from "src/utils/storage";
 import styled from "styled-components";
 
 export const CommonInput = styled.input`
