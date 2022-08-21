@@ -45,7 +45,7 @@ export default function Circle() {
                         style={{color:'white', backgroundColor:'#3AA84C'}} 
                         onClick={() => handleOnCircleClick(day.id)}
                         key={day.id}>
-                            <svg id="SvgjsSvg1012" width="30" height="30" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1013"></defs><g id="SvgjsG1014"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30" height="30"><rect width="256" height="256" fill="none"></rect><polyline fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" points="216 72.005 104 184 48 128.005"></polyline></svg></g></svg>
+                            <svg id="SvgjsSvg1012" width="30" height="30" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink"><defs id="SvgjsDefs1013"></defs><g id="SvgjsG1014"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30" height="30"><rect width="256" height="256" fill="none"></rect><polyline fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="24" points="216 72.005 104 184 48 128.005"></polyline></svg></g></svg>
                     </CircleComponent>) : 
                 ( 
                     <CircleComponent
