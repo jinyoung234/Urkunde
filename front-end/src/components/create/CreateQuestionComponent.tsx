@@ -54,6 +54,7 @@ export default function CreateQuestionComponent() {
                     <MovePageButton
                         url={"/self-check"}
                         content={"점검하러 가기"}
+                        isCheck={true}
                     />
                 </CheckSubComponent>
             </CommonComponent>
