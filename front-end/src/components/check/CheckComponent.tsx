@@ -9,16 +9,11 @@ import Circle from "src/components/check/atoms/Circle";
 import useTimer from "src/hooks/useTimer";
 
 export default function CheckComponent() {
-    // 현재 시간, 현재 날짜, 초기화 되기 전 week, state가 모두 false인 newWeek를 저장해놓은 customHook
     const {seconds, dayOfWeek, setWeek, newWeek} = useTimer();
-
-    // 브라우저가 mount 됬을 때 일 -> 월로 넘어가는 00:00:00이면 모든 Circle State 초기화
+    
     useEffect(() => {
-        (seconds === '00:00:00' && dayOfWeek === 1) && setWeek(
-            (week) => {
-                return newWeek;
-            }
-        );
+        (seconds === '00:00:00' && dayOfWeek === 1) && 
+        setWeek([...newWeek]);
     },[seconds]);
 
     return (
