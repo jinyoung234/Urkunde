@@ -31,6 +31,18 @@ export const questionNum = atom({
     effects_UNSTABLE: [persistAtom],
 })
 
+// Question 상태 관리 (Input - CreateQuestion component 상태 공유)
+export const questionState = atom({
+    key : 'question',
+    default : ''
+})
+
+// Answer 상태 관리 (TextArea - CreateQuestion component 상태 공유)
+export const answerState = atom({
+    key : 'answer',
+    default : ''
+})
+
 // 문제-답 세트 상태 관리
 export const questionSet = atom<ISetInfo[]>({
     key: "qustionSet",
@@ -64,4 +76,30 @@ export const weeklyCheck = atom({
         {id: 6, date: '토', state: false}, 
     ],
     effects_UNSTABLE: [persistAtom],
+})
+
+export const currentIndex = atom({
+    key: 'currentIndex',
+    default : 0
+})
+
+export const sliderMotionChange = atom({
+    key: 'sliderMotionChange',
+    default : false
+})
+
+
+export const isAnswer = atom({
+    key: 'isAnswer',
+    default : false
+})
+
+export const answerButtonState = atom({
+    key: 'answerButtonState',
+    default : false
+})
+
+export const isCorrect = atom({
+    key: 'isCorrect',
+    default : false
 })
