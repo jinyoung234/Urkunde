@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import {motion} from "framer-motion"
+
 export const Container = styled.div`
     padding: 80px 80px;
     display: flex;
@@ -111,12 +112,6 @@ export const PrimaryLargeButton = styled.button`
     background-color: #3C73CF;
     color: white;
 `
-export const DangerButton = styled(PrimaryButton)`
-    margin-top: 40px;
-    margin-bottom: 0px;
-    width: 12%;
-    background-color: #C82333;
-`;
 
 // Circle
 
@@ -133,6 +128,10 @@ export const Circle = styled.div`
 `;
 
 export const BackCircle = styled(Circle)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     position: absolute;
     background-color: white;
     top : 110px;

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
-import { modalState } from "../utils/storage";
+import { modalState } from "../../utils/storage";
 import { HeadTitle, SubTitle } from "./Commons";
 
 const Overlay = styled(motion.div)`

@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { modalState, colorMode } from "../utils/storage";
+import { modalState, colorMode } from "../../utils/storage";
 import Modal from "./Modal";
 
 const Nav = styled.nav`
