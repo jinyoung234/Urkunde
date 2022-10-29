@@ -1,10 +1,13 @@
 # Urkunde - web page for self-check-test
 
 <div align=center>
-https://urkunde.netlify.app/
+https://urkunde.link
+
 </div>
 
 > Urkunde?
+
+- 독일어로 `확인`이라는 의미를 가짐
 
 <div align=center>
 
@@ -26,8 +29,9 @@ https://urkunde.netlify.app/
 
 -   프로젝트 목표
 
+
 <div align = center> 
-누구나 사용할 수 있는 쉬운 사용법과 함께 공부한 것에 대한 점검을 할 수 있는 웹 앱을 만들자
+<b>누구나 사용할 수 있는 쉬운 사용법과 함께 공부한 것에 대한 점검을 할 수 있는 웹 앱을 만들자</b>
 </div>
 
 <br/>
@@ -45,7 +49,8 @@ https://urkunde.netlify.app/
 - `recoil-persist`
 
 #### 3. 배포
-- `netlify`
+- `AWS S3`
+- `AWS CLOUDFRONT`
 
 <br/>
 
