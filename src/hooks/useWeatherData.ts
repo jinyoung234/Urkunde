@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { weatherAPIDefault, IWeatherInfo } from "src/utils/api";
+import { weatherAPIDefault, IWeatherInfo } from "src/api";
 
 export default function useWeatherData() {
   // api로 받은 데이터

@@ -1,9 +1,7 @@
-import HomeComponent from "src/components/home/HomeComponent";
+import HomeTemplate from "src/components/home";
 
 function Home() {
-    return (
-        <HomeComponent/>
-    )
+  return <HomeTemplate />;
 }
 
 export default Home;
