@@ -31,9 +31,6 @@ const GlobalStyle = createGlobalStyle`
     *[hidden] {
         display: none;
     }
-    body {
-    line-height: 1;
-    }
     menu, ol, ul {
     list-style: none;
     }
@@ -56,11 +53,14 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-family: 'Source Sans Pro', sans-serif;
         line-height: 1.2;
-        background: ${props => props.theme.bgColor};
+        background: ${(props) => props.theme.bgColor};
     }
     a {
     text-decoration:none;
     color:inherit;
+    }
+    html {
+        font-size : 10px;
     }
 `;
 
