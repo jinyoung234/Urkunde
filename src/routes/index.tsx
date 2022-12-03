@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "src/components/commons/NavBar";
-import Check from "src/routes/Check";
-import CreateQuestion from "src/routes/CreateQuestion";
-import Home from "src/routes/Home";
-import ModifyQuestion from "src/routes/ModifyQuestion";
-import SelfCheck from "src/routes/SelfCheck";
-import SelfCheckResult from "src/routes/SelfCheckResult";
+import Check from "src/pages/Check";
+import CreateQuestion from "src/pages/CreateQuestion";
+import Home from "src/pages/Home";
+import ModifyQuestion from "src/pages/ModifyQuestion";
+import SelfCheck from "src/pages/SelfCheck";
+import SelfCheckResult from "src/pages/SelfCheckResult";
 
 function Router() {
   return (
