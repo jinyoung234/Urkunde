@@ -1,5 +1,5 @@
 import { useSetRecoilState } from "recoil";
-import { questionNum, questionSet } from "src/utils/storage";
+import { questionNum, questionSet } from "src/atoms";
 
 export default function useDelete() {
   // 생성한 문제들을 RecoilState로 관리

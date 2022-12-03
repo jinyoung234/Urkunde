@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { weeklyCheck } from "src/utils/storage";
+import { weeklyCheck } from "src/atoms";
 import styled from "styled-components";
 
 export const CircleComponent = styled.div`

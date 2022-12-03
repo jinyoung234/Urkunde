@@ -1,11 +1,11 @@
 import { ThemeProvider } from "styled-components";
-import GlobalStyle from "./utils/globalStyle";
+import GlobalStyle from "./styles/globalStyle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { lightTheme, colorTheme } from "./utils/theme";
+import { lightTheme, colorTheme } from "./styles/theme";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Router from "./routes";
 import { useRecoilValue } from "recoil";
-import { colorMode } from "./utils/storage";
+import { colorMode } from "./atoms";
 
 const queryClient = new QueryClient();
 
