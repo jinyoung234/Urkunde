@@ -1,10 +1,7 @@
-import SelfCheckComponent from "src/components/self-check/SelfCheckComponent"
+import SelfCheckTemplate from "src/templates/selfCheck";
 
 function SelfCheck() {
-    
-    return (
-        <SelfCheckComponent/>
-    )
+  return <SelfCheckTemplate />;
 }
 
-export default SelfCheck
+export default SelfCheck;
