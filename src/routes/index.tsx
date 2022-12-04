@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "src/components/commons/NavBar";
 import Check from "src/pages/Check";
-import CreateQuestion from "src/pages/CreateQuestion";
+import Create from "src/pages/Create";
 import Home from "src/pages/Home";
 import ModifyQuestion from "src/pages/ModifyQuestion";
 import SelfCheck from "src/pages/SelfCheck";
@@ -14,7 +14,7 @@ function Router() {
       <Routes>
         <Route path={"/"} element={<Home />}></Route>
         <Route path={"/check"} element={<Check />}></Route>
-        <Route path={"/create"} element={<CreateQuestion />}></Route>
+        <Route path={"/create"} element={<Create />}></Route>
         <Route path={"/self-check"} element={<SelfCheck />}></Route>
         <Route path={"/modify"} element={<ModifyQuestion />}></Route>
         <Route path={"/result"} element={<SelfCheckResult />}></Route>
