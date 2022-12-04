@@ -1,5 +1,5 @@
 import ContainerTitle from "src/components/commons/containerTitle";
-import Circle from "../dayCircle";
+import Circle from "./dayCircle";
 import { CircleContainer, WeeklyCheckWrapper } from "./style";
 
 export default function WeeklyCheck() {
