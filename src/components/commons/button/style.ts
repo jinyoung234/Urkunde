@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-export const ButtonWrapper = styled.button<{ size: string }>`
-  margin: 4rem 0px;
+export const ButtonWrapper = styled.button<{
+  size: string;
+  isAnswer?: boolean;
+}>`
+  margin: ${(props) => (props.isAnswer ? "0" : "4rem 0px")};
   width: ${(props) => (props.size === "sm" ? "10rem" : "")};
   border: 0px;
   height: ${(props) => (props.size === "sm" ? "3rem" : "")};
