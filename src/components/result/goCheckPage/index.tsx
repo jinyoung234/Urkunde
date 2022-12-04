@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { SubTitle } from "src/components/commons/Commons";
 import { answerState } from "src/atoms";
+import { GoCheckPageWrapper } from "./style";
 
 export default function GoCheckPage() {
   const setAnswer = useSetRecoilState(answerState);
@@ -10,8 +10,8 @@ export default function GoCheckPage() {
     setAnswer("");
   };
   return (
-    <SubTitle style={{ fontWeight: "500" }} onClick={handleGoPage}>
+    <GoCheckPageWrapper onClick={handleGoPage}>
       <Link to="/check">체크 페이지로 이동하기</Link>
-    </SubTitle>
+    </GoCheckPageWrapper>
   );
 }
