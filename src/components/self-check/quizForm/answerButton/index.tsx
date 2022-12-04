@@ -1,10 +1,6 @@
+import { ButtonWrapper } from "src/components/commons/button/style";
+import { AnswerWrapper, CorrectWrapper, IncorrectWrapper } from "./style";
 import { useRecoilValue } from "recoil";
-import {
-  Correct,
-  Incorrect,
-  ModifyPageTitle,
-} from "src/components/commons/Commons";
-import { Button } from "src/components/commons/PrimaryButton";
 import useAnswerCheck from "src/hooks/useAnswerCheck";
 import { answerButtonState, isCorrect } from "src/atoms";
 
@@ -20,28 +16,23 @@ export default function AnswerButton({ answer }: AnswerButtonProps) {
   return (
     <>
       {!isWriteAnswer && (
-        <Button
+        <ButtonWrapper
+          size="sm"
           onClick={() => handleAnswerCheck(answer)}
-          style={{ margin: "0px 0px", marginTop: "20px" }}
+          isAnswer
         >
           정답 확인
-        </Button>
+        </ButtonWrapper>
       )}
       {isWriteAnswer && (
-        <ModifyPageTitle
-          style={{
-            marginTop: "15px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <AnswerWrapper>
           {isCorrectAnswer ? (
-            <Correct>정답입니다 :)</Correct>
+            <CorrectWrapper>정답입니다 :)</CorrectWrapper>
           ) : (
-            <Incorrect>틀렸습니다 :)</Incorrect>
+            <IncorrectWrapper>틀렸습니다 :)</IncorrectWrapper>
           )}
           {answer}
-        </ModifyPageTitle>
+        </AnswerWrapper>
       )}
     </>
   );
