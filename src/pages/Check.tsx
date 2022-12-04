@@ -1,9 +1,9 @@
-import CheckComponent from "src/components/check/CheckComponent";
+import CheckTemplate from "src/templates/check";
 
 function Check() {
   return (
     <>
-      <CheckComponent />
+      <CheckTemplate />
     </>
   );
 }
