@@ -32,7 +32,7 @@ export default function CreateQuestion() {
           question={question}
           answer={answer}
         />
-        <MovePageButton url={"/modify"} content={"문제 수정"} />
+        <MovePageButton url={"/delete"} content={"문제 삭제"} />
         <ResetButton resetFn={handleResetButton} content={"문제 리셋"} />
         <MovePageButton
           url={"/self-check"}

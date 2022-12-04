@@ -7,6 +7,7 @@ export const DeleteFormWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
   width: 70%;
   height: 50vh;
   border: 0;
