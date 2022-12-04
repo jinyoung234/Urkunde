@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import { SubTitle } from "src/components/commons/Commons";
 import useLoadAllQuestion from "src/hooks/useLoadAllQuestion";
 import { currentIndex } from "src/atoms";
+import { GoResultLinkWrapper } from "./style";
 
 export default function GoResultLink() {
   const curr = useRecoilValue(currentIndex);
@@ -10,9 +10,9 @@ export default function GoResultLink() {
   return (
     <>
       {curr + 1 === questionNumber && (
-        <SubTitle style={{ fontWeight: "500" }}>
+        <GoResultLinkWrapper>
           <Link to="/result">결과 확인하러 가기</Link>
-        </SubTitle>
+        </GoResultLinkWrapper>
       )}
     </>
   );
