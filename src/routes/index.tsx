@@ -4,8 +4,8 @@ import Check from "src/pages/Check";
 import Create from "src/pages/Create";
 import Home from "src/pages/Home";
 import SelfCheck from "src/pages/SelfCheck";
-import SelfCheckResult from "src/pages/SelfCheckResult";
 import Delete from "src/pages/Delete";
+import Result from "src/pages/Result";
 
 function Router() {
   return (
@@ -17,7 +17,7 @@ function Router() {
         <Route path={"/create"} element={<Create />}></Route>
         <Route path={"/self-check"} element={<SelfCheck />}></Route>
         <Route path={"/delete"} element={<Delete />}></Route>
-        <Route path={"/result"} element={<SelfCheckResult />}></Route>
+        <Route path={"/result"} element={<Result />}></Route>
       </Routes>
     </BrowserRouter>
   );
