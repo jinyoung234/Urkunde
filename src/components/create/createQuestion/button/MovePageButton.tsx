@@ -7,7 +7,7 @@ import {
   currentIndex,
   incorrectNum,
 } from "src/atoms";
-import { LargeButton } from "./CreateButton";
+import { LargeButtonWrapper } from "./style";
 
 interface MovePageButtonProps {
   content: string;
@@ -42,10 +42,12 @@ export default function MovePageButton({
   return (
     <>
       {isCheck && isCheck !== undefined && (
-        <LargeButton onClick={moveCheckPage}>{content}</LargeButton>
+        <LargeButtonWrapper onClick={moveCheckPage}>
+          {content}
+        </LargeButtonWrapper>
       )}
       {isCheck === undefined && (
-        <LargeButton onClick={movePage}>{content}</LargeButton>
+        <LargeButtonWrapper onClick={movePage}>{content}</LargeButtonWrapper>
       )}
     </>
   );
