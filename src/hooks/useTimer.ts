@@ -2,7 +2,7 @@ import { useSetRecoilState } from "recoil";
 import moment from "moment";
 import { useInterval } from "react-use";
 import { useState } from "react";
-import { IWeekInfo } from "src/components/check/atoms/Circle";
+import { IWeekInfo } from "src/components/check/weeklyCheck/dayCircle";
 import { weeklyCheck } from "src/atoms";
 
 // Weekly check Circle 들을 초기화 하기 위한 custom hook

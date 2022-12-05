@@ -7,11 +7,12 @@ export default function HomeTemplate(): React.ReactElement {
   return (
     <Container>
       <PageTitle
+        url={""}
         title="학습하러 오신 것을 환영합니다"
         subtitle="Urkunde에서 학습 해보세요"
       />
       <Weather />
-      <PrimaryButton size="sm" goPage={"check"} content={"Go to Ukkunde"} />
+      <PrimaryButton size="sm" goPage={"check"} content={"이동 하기"} />
     </Container>
   );
 }

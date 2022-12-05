@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const EmptyQuizFormContainer = styled.div`
   background-color: white;
   width: 70%;
-  height: 90%;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
