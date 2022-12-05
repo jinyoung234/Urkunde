@@ -4,7 +4,7 @@ import { weatherAPIDefault, IWeatherInfo } from "src/api";
 
 export default function useWeatherData() {
   // api로 받은 데이터
-  const { data } = useQuery<IWeatherInfo>(
+  const { data, isLoading, isError } = useQuery<IWeatherInfo>(
     ["api", "weather"],
     weatherAPIDefault
   );
@@ -17,5 +17,7 @@ export default function useWeatherData() {
     name,
     temp,
     weather,
+    isLoading,
+    isError,
   };
 }
