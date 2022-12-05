@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 import { questionNum, weeklyCheck, currentIndex, answerState } from "src/atoms";
-import { Container } from "src/components/commons/style";
+import { SelfCheckContainer } from "src/components/commons/style";
 import { useEffect } from "react";
 import EmptySelfCheckForm from "src/components/self-check/emptyQuizForm";
 import useTimer from "src/hooks/useTimer";
@@ -18,7 +18,7 @@ export default function SelfCheckTemplate() {
 
   useEffect(() => {}, [answer]);
   return (
-    <Container isLastCheck={curr + 1 === quesionNumber}>
+    <SelfCheckContainer isLastCheck={curr + 1 === quesionNumber}>
       <PageTitle
         title={`${week[dayOfWeek].date}요일 SELF-CHECK`}
         url="/create"
@@ -27,6 +27,6 @@ export default function SelfCheckTemplate() {
       <GoResultLink />
       <EmptySelfCheckForm />
       <QuizForm />
-    </Container>
+    </SelfCheckContainer>
   );
 }
