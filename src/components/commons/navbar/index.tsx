@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { colorMode, modalState } from "src/atoms";
-import Modal from "src/components/commons/Modal";
+import Modal from "src/components/commons/modal";
 import {
   ChangeModeWrapper,
   LogoWrapper,
