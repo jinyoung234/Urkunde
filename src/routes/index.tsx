@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NavBar from "src/components/commons/NavBar";
 import Check from "src/pages/Check";
 import Create from "src/pages/Create";
 import Home from "src/pages/Home";
 import SelfCheck from "src/pages/SelfCheck";
 import Delete from "src/pages/Delete";
 import Result from "src/pages/Result";
+import NavBar from "src/components/commons/navbar";
 
 function Router() {
   return (
